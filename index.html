@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triagem Consultiva por Ligacao</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="backdrop">
+      <div class="blob blob-one"></div>
+      <div class="blob blob-two"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
+    <div class="app">
+      <header class="app-header">
+        <div class="brand">
+          <span class="pill">Curso Online</span>
+          <h1>Triagem Consultiva por Ligacao</h1>
+          <p>Botox, Preenchimento e Bioestimulador</p>
+        </div>
+        <div class="header-stats">
+          <div class="stat">
+            <span>Level</span>
+            <strong id="levelValue">1</strong>
+          </div>
+          <div class="stat">
+            <span>XP</span>
+            <strong id="xpValue">0</strong>
+          </div>
+          <div class="stat">
+            <span>Streak</span>
+            <strong id="streakValue">0 dias</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="app-main">
+        <aside class="panel course-map">
+          <div class="panel-header">
+            <h2>Mapa do Curso</h2>
+            <span class="panel-sub">3 semanas | 5 dias por semana</span>
+          </div>
+          <div id="weekList" class="week-list"></div>
+        </aside>
+
+        <main class="panel day-panel">
+          <div class="day-head">
+            <div>
+              <span class="eyebrow" id="dayLabel">Semana 1 - Dia 1</span>
+              <h2 id="dayTitle">DNA da queixa</h2>
+              <p id="dayFocus">
+                Ouvir, traduzir e identificar o mecanismo dominante.
+              </p>
+            </div>
+            <div class="day-progress">
+              <div class="progress-ring" id="dayRing">
+                <div class="ring-inner">
+                  <span id="dayProgressValue">0%</span>
+                  <small>do dia</small>
+                </div>
+              </div>
+              <div class="progress-meta">
+                <span id="dayProgressMeta">0/3 passos</span>
+                <span class="muted">Aula + Treino + Quiz</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="tabs" role="tablist">
+            <button class="tab active" data-tab="lesson">Aula</button>
+            <button class="tab" data-tab="training">Treino de fala</button>
+            <button class="tab" data-tab="quiz">Quiz</button>
+            <button class="tab" data-tab="script">Script mestre</button>
+          </div>
+
+          <section class="tab-content active" id="tab-lesson">
+            <div id="lessonBody" class="content-block"></div>
+            <button class="action" id="completeLesson">
+              Marcar aula como feita
+            </button>
+          </section>
+
+          <section class="tab-content" id="tab-training">
+            <div id="trainingBody" class="content-block"></div>
+            <button class="action" id="completeTraining">
+              Marcar treino como feito
+            </button>
+          </section>
+
+          <section class="tab-content" id="tab-quiz">
+            <div id="quizBody" class="content-block"></div>
+          </section>
+
+          <section class="tab-content" id="tab-script">
+            <div class="content-block" id="scriptBody"></div>
+            <button class="action" id="completeScript">
+              Marcar script como memorizado
+            </button>
+          </section>
+        </main>
+
+        <aside class="panel side-panel">
+          <div class="panel-header">
+            <h2>Gamificacao</h2>
+            <span class="panel-sub">XP, badges e missoes</span>
+          </div>
+
+          <div class="streak-card">
+            <h3>Streak de evolucao</h3>
+            <p id="streakCopy">Complete um passo hoje para manter o ritmo.</p>
+            <div class="streak-track" id="streakTrack"></div>
+          </div>
+
+          <div class="quest-card">
+            <h3>Missoes do dia</h3>
+            <ul id="questList" class="checklist"></ul>
+          </div>
+
+          <div class="badge-card">
+            <h3>Badges desbloqueados</h3>
+            <div id="badgeGrid" class="badge-grid"></div>
+          </div>
+
+          <div class="note-card">
+            <h3>Meta do aluno</h3>
+            <ul class="mini-list">
+              <li>Entender a queixa real (sintoma vs causa).</li>
+              <li>Classificar por mecanismo: movimento, volume, flacidez-pele.</li>
+              <li>Explicar caminhos sem prometer e sem soar robotico.</li>
+              <li>Conduzir para avaliacao como proximo passo logico.</li>
+            </ul>
+          </div>
+
+          <div class="note-card">
+            <h3>Checklist de ligacao</h3>
+            <ul class="mini-list">
+              <li>Queixa em 1 frase</li>
+              <li>Repouso x expressao</li>
+              <li>Hipotese de mecanismo</li>
+              <li>Medo ou objecao</li>
+              <li>Proximo passo elegante</li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+
+      <section class="panel footer-panel">
+        <div class="overall-progress">
+          <div>
+            <h3>Progresso total</h3>
+            <p id="overallProgressMeta">0% concluido</p>
+          </div>
+          <div class="progress-bar">
+            <div id="overallProgressFill"></div>
+          </div>
+          <div class="progress-summary" id="progressSummary"></div>
+        </div>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
